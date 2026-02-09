@@ -127,13 +127,13 @@ Create a `.env` with your Azure OpenAI credentials before running.
 
 ---
 
-## System Components Diagram (Graphviz DOT)
+## System Components Diagram
 
-![alt text](assets/SystemComponents.svg)
+<img src="assets/SystemComponents.svg" alt="System Components Diagram" width="100%">
 
 ---
 
-## Architecture Diagram (Graphviz DOT)
+## Architecture Diagram
 
 ![alt text](assets/ArchitectureFlow.svg)
 
