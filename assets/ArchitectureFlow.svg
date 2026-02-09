@@ -1,0 +1,259 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="342pt" height="1168pt" viewBox="0.00 0.00 342.00 1168.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1164.4)">
+<title>ArchitectureFlow</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-1164.4 338.49,-1164.4 338.49,4 -4,4"/>
+<text xml:space="preserve" text-anchor="middle" x="167.25" y="-1145.6" font-family="Times,serif" font-size="12.00">RaceGPT End-to-End Architecture Flow (Audio to Answers)</text>
+<!-- Start -->
+<g id="node1" class="node">
+<title>Start</title>
+<path fill="white" stroke="black" d="M165.26,-1138C165.26,-1138 91.4,-1138 91.4,-1138 85.4,-1138 79.4,-1132 79.4,-1126 79.4,-1126 79.4,-1114 79.4,-1114 79.4,-1108 85.4,-1102 91.4,-1102 91.4,-1102 165.26,-1102 165.26,-1102 171.26,-1102 177.26,-1108 177.26,-1114 177.26,-1114 177.26,-1126 177.26,-1126 177.26,-1132 171.26,-1138 165.26,-1138"/>
+<text xml:space="preserve" text-anchor="middle" x="128.33" y="-1123.3" font-family="Times,serif" font-size="11.00">Start</text>
+<text xml:space="preserve" text-anchor="middle" x="128.33" y="-1110.1" font-family="Times,serif" font-size="11.00">Race Session Data</text>
+</g>
+<!-- A0 -->
+<g id="node2" class="node">
+<title>A0</title>
+<path fill="white" stroke="black" d="M185.44,-1065C185.44,-1065 71.23,-1065 71.23,-1065 65.23,-1065 59.23,-1059 59.23,-1053 59.23,-1053 59.23,-1041 59.23,-1041 59.23,-1035 65.23,-1029 71.23,-1029 71.23,-1029 185.44,-1029 185.44,-1029 191.44,-1029 197.44,-1035 197.44,-1041 197.44,-1041 197.44,-1053 197.44,-1053 197.44,-1059 191.44,-1065 185.44,-1065"/>
+<text xml:space="preserve" text-anchor="middle" x="128.33" y="-1050.3" font-family="Times,serif" font-size="11.00">Multi-Channel Audio Fetch</text>
+<text xml:space="preserve" text-anchor="middle" x="128.33" y="-1037.1" font-family="Times,serif" font-size="11.00">(per car, per channel)</text>
+</g>
+<!-- Start&#45;&gt;A0 -->
+<g id="edge1" class="edge">
+<title>Start-&gt;A0</title>
+<path fill="none" stroke="black" d="M128.33,-1101.81C128.33,-1094.23 128.33,-1085.1 128.33,-1076.54"/>
+<polygon fill="black" stroke="black" points="131.83,-1076.54 128.33,-1066.54 124.83,-1076.54 131.83,-1076.54"/>
+</g>
+<!-- A1 -->
+<g id="node3" class="node">
+<title>A1</title>
+<path fill="white" stroke="black" d="M162.07,-992C162.07,-992 94.6,-992 94.6,-992 88.6,-992 82.6,-986 82.6,-980 82.6,-980 82.6,-968 82.6,-968 82.6,-962 88.6,-956 94.6,-956 94.6,-956 162.07,-956 162.07,-956 168.07,-956 174.07,-962 174.07,-968 174.07,-968 174.07,-980 174.07,-980 174.07,-986 168.07,-992 162.07,-992"/>
+<text xml:space="preserve" text-anchor="middle" x="128.33" y="-970.7" font-family="Times,serif" font-size="11.00">Audio Denoising</text>
+</g>
+<!-- A0&#45;&gt;A1 -->
+<g id="edge2" class="edge">
+<title>A0-&gt;A1</title>
+<path fill="none" stroke="black" d="M128.33,-1028.81C128.33,-1021.23 128.33,-1012.1 128.33,-1003.54"/>
+<polygon fill="black" stroke="black" points="131.83,-1003.54 128.33,-993.54 124.83,-1003.54 131.83,-1003.54"/>
+</g>
+<!-- A2 -->
+<g id="node4" class="node">
+<title>A2</title>
+<path fill="white" stroke="black" d="M189.55,-919C189.55,-919 67.11,-919 67.11,-919 61.11,-919 55.11,-913 55.11,-907 55.11,-907 55.11,-883.4 55.11,-883.4 55.11,-877.4 61.11,-871.4 67.11,-871.4 67.11,-871.4 189.55,-871.4 189.55,-871.4 195.55,-871.4 201.55,-877.4 201.55,-883.4 201.55,-883.4 201.55,-907 201.55,-907 201.55,-913 195.55,-919 189.55,-919"/>
+<text xml:space="preserve" text-anchor="middle" x="128.33" y="-905.1" font-family="Times,serif" font-size="11.00">Silence Trimming</text>
+<text xml:space="preserve" text-anchor="middle" x="128.33" y="-891.9" font-family="Times,serif" font-size="11.00">(remove absolute silent parts)</text>
+<text xml:space="preserve" text-anchor="middle" x="128.33" y="-878.7" font-family="Times,serif" font-size="11.00">retain time integrity</text>
+</g>
+<!-- A1&#45;&gt;A2 -->
+<g id="edge3" class="edge">
+<title>A1-&gt;A2</title>
+<path fill="none" stroke="black" d="M128.33,-955.57C128.33,-948.21 128.33,-939.36 128.33,-930.77"/>
+<polygon fill="black" stroke="black" points="131.83,-930.9 128.33,-920.9 124.83,-930.9 131.83,-930.9"/>
+</g>
+<!-- A3 -->
+<g id="node5" class="node">
+<title>A3</title>
+<path fill="white" stroke="black" d="M182.38,-834.4C182.38,-834.4 74.28,-834.4 74.28,-834.4 68.28,-834.4 62.28,-828.4 62.28,-822.4 62.28,-822.4 62.28,-798.8 62.28,-798.8 62.28,-792.8 68.28,-786.8 74.28,-786.8 74.28,-786.8 182.38,-786.8 182.38,-786.8 188.38,-786.8 194.38,-792.8 194.38,-798.8 194.38,-798.8 194.38,-822.4 194.38,-822.4 194.38,-828.4 188.38,-834.4 182.38,-834.4"/>
+<text xml:space="preserve" text-anchor="middle" x="128.33" y="-820.5" font-family="Times,serif" font-size="11.00">Speaker Diarization</text>
+<text xml:space="preserve" text-anchor="middle" x="128.33" y="-807.3" font-family="Times,serif" font-size="11.00">(speechlib)</text>
+<text xml:space="preserve" text-anchor="middle" x="128.33" y="-794.1" font-family="Times,serif" font-size="11.00">segments with timestamps</text>
+</g>
+<!-- A2&#45;&gt;A3 -->
+<g id="edge4" class="edge">
+<title>A2-&gt;A3</title>
+<path fill="none" stroke="black" d="M128.33,-871.19C128.33,-863.47 128.33,-854.68 128.33,-846.26"/>
+<polygon fill="black" stroke="black" points="131.83,-846.29 128.33,-836.29 124.83,-846.29 131.83,-846.29"/>
+</g>
+<!-- A4 -->
+<g id="node6" class="node">
+<title>A4</title>
+<path fill="white" stroke="black" d="M165.41,-749.8C165.41,-749.8 91.25,-749.8 91.25,-749.8 85.25,-749.8 79.25,-743.8 79.25,-737.8 79.25,-737.8 79.25,-725.8 79.25,-725.8 79.25,-719.8 85.25,-713.8 91.25,-713.8 91.25,-713.8 165.41,-713.8 165.41,-713.8 171.41,-713.8 177.41,-719.8 177.41,-725.8 177.41,-725.8 177.41,-737.8 177.41,-737.8 177.41,-743.8 171.41,-749.8 165.41,-749.8"/>
+<text xml:space="preserve" text-anchor="middle" x="128.33" y="-735.1" font-family="Times,serif" font-size="11.00">Transcription</text>
+<text xml:space="preserve" text-anchor="middle" x="128.33" y="-721.9" font-family="Times,serif" font-size="11.00">(time-aligned text)</text>
+</g>
+<!-- A3&#45;&gt;A4 -->
+<g id="edge5" class="edge">
+<title>A3-&gt;A4</title>
+<path fill="none" stroke="black" d="M128.33,-786.56C128.33,-778.72 128.33,-769.86 128.33,-761.63"/>
+<polygon fill="black" stroke="black" points="131.83,-761.72 128.33,-751.72 124.83,-761.72 131.83,-761.72"/>
+</g>
+<!-- A5 -->
+<g id="node7" class="node">
+<title>A5</title>
+<path fill="white" stroke="black" d="M186.04,-676.8C186.04,-676.8 70.62,-676.8 70.62,-676.8 64.62,-676.8 58.62,-670.8 58.62,-664.8 58.62,-664.8 58.62,-641.2 58.62,-641.2 58.62,-635.2 64.62,-629.2 70.62,-629.2 70.62,-629.2 186.04,-629.2 186.04,-629.2 192.04,-629.2 198.04,-635.2 198.04,-641.2 198.04,-641.2 198.04,-664.8 198.04,-664.8 198.04,-670.8 192.04,-676.8 186.04,-676.8"/>
+<text xml:space="preserve" text-anchor="middle" x="128.33" y="-662.9" font-family="Times,serif" font-size="11.00">Speaker Role Attribution</text>
+<text xml:space="preserve" text-anchor="middle" x="128.33" y="-649.7" font-family="Times,serif" font-size="11.00">BERT-based or LLM-based</text>
+<text xml:space="preserve" text-anchor="middle" x="128.33" y="-636.5" font-family="Times,serif" font-size="11.00">(driver, engineer, spotter)</text>
+</g>
+<!-- A4&#45;&gt;A5 -->
+<g id="edge6" class="edge">
+<title>A4-&gt;A5</title>
+<path fill="none" stroke="black" d="M128.33,-713.37C128.33,-706.01 128.33,-697.16 128.33,-688.57"/>
+<polygon fill="black" stroke="black" points="131.83,-688.7 128.33,-678.7 124.83,-688.7 131.83,-688.7"/>
+</g>
+<!-- T1 -->
+<g id="node8" class="node">
+<title>T1</title>
+<path fill="white" stroke="black" d="M190.62,-592.2C190.62,-592.2 66.05,-592.2 66.05,-592.2 60.05,-592.2 54.05,-586.2 54.05,-580.2 54.05,-580.2 54.05,-568.2 54.05,-568.2 54.05,-562.2 60.05,-556.2 66.05,-556.2 66.05,-556.2 190.62,-556.2 190.62,-556.2 196.62,-556.2 202.62,-562.2 202.62,-568.2 202.62,-568.2 202.62,-580.2 202.62,-580.2 202.62,-586.2 196.62,-592.2 190.62,-592.2"/>
+<text xml:space="preserve" text-anchor="middle" x="128.33" y="-577.5" font-family="Times,serif" font-size="11.00">Structured Transcript Records</text>
+<text xml:space="preserve" text-anchor="middle" x="128.33" y="-564.3" font-family="Times,serif" font-size="11.00">[start, end, speaker, text]</text>
+</g>
+<!-- A5&#45;&gt;T1 -->
+<g id="edge7" class="edge">
+<title>A5-&gt;T1</title>
+<path fill="none" stroke="black" d="M128.33,-628.96C128.33,-621.12 128.33,-612.26 128.33,-604.03"/>
+<polygon fill="black" stroke="black" points="131.83,-604.12 128.33,-594.12 124.83,-604.12 131.83,-604.12"/>
+</g>
+<!-- R1 -->
+<g id="node9" class="node">
+<title>R1</title>
+<path fill="white" stroke="black" d="M124.38,-519.2C124.38,-519.2 22.29,-519.2 22.29,-519.2 16.29,-519.2 10.29,-513.2 10.29,-507.2 10.29,-507.2 10.29,-495.2 10.29,-495.2 10.29,-489.2 16.29,-483.2 22.29,-483.2 22.29,-483.2 124.38,-483.2 124.38,-483.2 130.38,-483.2 136.38,-489.2 136.38,-495.2 136.38,-495.2 136.38,-507.2 136.38,-507.2 136.38,-513.2 130.38,-519.2 124.38,-519.2"/>
+<text xml:space="preserve" text-anchor="middle" x="73.33" y="-504.5" font-family="Times,serif" font-size="11.00">Chunking + Embeddings</text>
+<text xml:space="preserve" text-anchor="middle" x="73.33" y="-491.3" font-family="Times,serif" font-size="11.00">(all-mpnet-base-v2)</text>
+</g>
+<!-- T1&#45;&gt;R1 -->
+<g id="edge8" class="edge">
+<title>T1-&gt;R1</title>
+<path fill="none" stroke="black" d="M115.02,-556.01C108.53,-547.64 100.6,-537.4 93.4,-528.1"/>
+<polygon fill="black" stroke="black" points="96.34,-526.19 87.45,-520.43 90.81,-530.47 96.34,-526.19"/>
+</g>
+<!-- R3 -->
+<g id="node15" class="node">
+<title>R3</title>
+<path fill="white" stroke="black" d="M228.07,-351.2C228.07,-351.2 108.59,-351.2 108.59,-351.2 102.59,-351.2 96.59,-345.2 96.59,-339.2 96.59,-339.2 96.59,-315.6 96.59,-315.6 96.59,-309.6 102.59,-303.6 108.59,-303.6 108.59,-303.6 228.07,-303.6 228.07,-303.6 234.07,-303.6 240.07,-309.6 240.07,-315.6 240.07,-315.6 240.07,-339.2 240.07,-339.2 240.07,-345.2 234.07,-351.2 228.07,-351.2"/>
+<text xml:space="preserve" text-anchor="middle" x="168.33" y="-337.3" font-family="Times,serif" font-size="11.00">Retrieval</text>
+<text xml:space="preserve" text-anchor="middle" x="168.33" y="-324.1" font-family="Times,serif" font-size="11.00">cosine similarity + keywords</text>
+<text xml:space="preserve" text-anchor="middle" x="168.33" y="-310.9" font-family="Times,serif" font-size="11.00">initial top-k</text>
+</g>
+<!-- T1&#45;&gt;R3 -->
+<g id="edge19" class="edge">
+<title>T1-&gt;R3</title>
+<path fill="none" stroke="black" d="M134.67,-555.91C138.29,-545.42 142.64,-531.69 145.33,-519.2 156.97,-465.23 163.18,-401.3 166.11,-362.85"/>
+<polygon fill="black" stroke="black" points="169.58,-363.27 166.82,-353.05 162.6,-362.77 169.58,-363.27"/>
+<text xml:space="preserve" text-anchor="middle" x="207.76" y="-456.2" font-family="Times,serif" font-size="10.00">indexed transcript chunks</text>
+</g>
+<!-- R2 -->
+<g id="node10" class="node">
+<title>R2</title>
+<path fill="white" stroke="black" d="M124.66,-435.2C124.66,-435.2 12,-435.2 12,-435.2 6,-435.2 0,-429.2 0,-423.2 0,-423.2 0,-411.2 0,-411.2 0,-405.2 6,-399.2 12,-399.2 12,-399.2 124.66,-399.2 124.66,-399.2 130.66,-399.2 136.66,-405.2 136.66,-411.2 136.66,-411.2 136.66,-423.2 136.66,-423.2 136.66,-429.2 130.66,-435.2 124.66,-435.2"/>
+<text xml:space="preserve" text-anchor="middle" x="68.33" y="-420.5" font-family="Times,serif" font-size="11.00">Cache and Invalidate</text>
+<text xml:space="preserve" text-anchor="middle" x="68.33" y="-407.3" font-family="Times,serif" font-size="11.00">SHA-256 per transcript file</text>
+</g>
+<!-- R1&#45;&gt;R2 -->
+<g id="edge9" class="edge">
+<title>R1-&gt;R2</title>
+<path fill="none" stroke="black" d="M72.27,-482.81C71.63,-472.37 70.81,-458.84 70.08,-446.86"/>
+<polygon fill="black" stroke="black" points="73.58,-446.84 69.48,-437.08 66.6,-447.27 73.58,-446.84"/>
+</g>
+<!-- R2&#45;&gt;R3 -->
+<g id="edge18" class="edge">
+<title>R2-&gt;R3</title>
+<path fill="none" stroke="black" d="M62.53,-398.74C60.5,-389.24 59.96,-377.72 65.74,-369.2 71.12,-361.28 78.3,-354.89 86.38,-349.75"/>
+<polygon fill="black" stroke="black" points="87.88,-352.92 94.91,-345 84.47,-346.81 87.88,-352.92"/>
+<text xml:space="preserve" text-anchor="middle" x="110.04" y="-372.2" font-family="Times,serif" font-size="10.00">transcript embeddings</text>
+</g>
+<!-- Q0 -->
+<g id="node11" class="node">
+<title>Q0</title>
+<path fill="white" stroke="black" d="M313.95,-671C313.95,-671 258.71,-671 258.71,-671 252.71,-671 246.71,-665 246.71,-659 246.71,-659 246.71,-647 246.71,-647 246.71,-641 252.71,-635 258.71,-635 258.71,-635 313.95,-635 313.95,-635 319.95,-635 325.95,-641 325.95,-647 325.95,-647 325.95,-659 325.95,-659 325.95,-665 319.95,-671 313.95,-671"/>
+<text xml:space="preserve" text-anchor="middle" x="286.33" y="-656.3" font-family="Times,serif" font-size="11.00">User Question</text>
+<text xml:space="preserve" text-anchor="middle" x="286.33" y="-643.1" font-family="Times,serif" font-size="11.00">(Chainlit)</text>
+</g>
+<!-- Q1 -->
+<g id="node12" class="node">
+<title>Q1</title>
+<path fill="white" stroke="black" d="M321.28,-592.2C321.28,-592.2 251.39,-592.2 251.39,-592.2 245.39,-592.2 239.39,-586.2 239.39,-580.2 239.39,-580.2 239.39,-568.2 239.39,-568.2 239.39,-562.2 245.39,-556.2 251.39,-556.2 251.39,-556.2 321.28,-556.2 321.28,-556.2 327.28,-556.2 333.28,-562.2 333.28,-568.2 333.28,-568.2 333.28,-580.2 333.28,-580.2 333.28,-586.2 327.28,-592.2 321.28,-592.2"/>
+<text xml:space="preserve" text-anchor="middle" x="286.33" y="-577.5" font-family="Times,serif" font-size="11.00">Query Preprocess</text>
+<text xml:space="preserve" text-anchor="middle" x="286.33" y="-564.3" font-family="Times,serif" font-size="11.00">normalize text</text>
+</g>
+<!-- Q0&#45;&gt;Q1 -->
+<g id="edge10" class="edge">
+<title>Q0-&gt;Q1</title>
+<path fill="none" stroke="black" d="M286.33,-634.57C286.33,-625.54 286.33,-614.27 286.33,-603.99"/>
+<polygon fill="black" stroke="black" points="289.83,-604.07 286.33,-594.07 282.83,-604.07 289.83,-604.07"/>
+</g>
+<!-- Q2 -->
+<g id="node13" class="node">
+<title>Q2</title>
+<path fill="white" stroke="black" d="M322.49,-519.2C322.49,-519.2 250.17,-519.2 250.17,-519.2 244.17,-519.2 238.17,-513.2 238.17,-507.2 238.17,-507.2 238.17,-495.2 238.17,-495.2 238.17,-489.2 244.17,-483.2 250.17,-483.2 250.17,-483.2 322.49,-483.2 322.49,-483.2 328.49,-483.2 334.49,-489.2 334.49,-495.2 334.49,-495.2 334.49,-507.2 334.49,-507.2 334.49,-513.2 328.49,-519.2 322.49,-519.2"/>
+<text xml:space="preserve" text-anchor="middle" x="286.33" y="-504.5" font-family="Times,serif" font-size="11.00">Query Expansion</text>
+<text xml:space="preserve" text-anchor="middle" x="286.33" y="-491.3" font-family="Times,serif" font-size="11.00">rephrased variants</text>
+</g>
+<!-- Q1&#45;&gt;Q2 -->
+<g id="edge11" class="edge">
+<title>Q1-&gt;Q2</title>
+<path fill="none" stroke="black" d="M286.33,-556.01C286.33,-548.43 286.33,-539.3 286.33,-530.74"/>
+<polygon fill="black" stroke="black" points="289.83,-530.74 286.33,-520.74 282.83,-530.74 289.83,-530.74"/>
+</g>
+<!-- Q3 -->
+<g id="node14" class="node">
+<title>Q3</title>
+<path fill="white" stroke="black" d="M305.95,-435.2C305.95,-435.2 228.71,-435.2 228.71,-435.2 222.71,-435.2 216.71,-429.2 216.71,-423.2 216.71,-423.2 216.71,-411.2 216.71,-411.2 216.71,-405.2 222.71,-399.2 228.71,-399.2 228.71,-399.2 305.95,-399.2 305.95,-399.2 311.95,-399.2 317.95,-405.2 317.95,-411.2 317.95,-411.2 317.95,-423.2 317.95,-423.2 317.95,-429.2 311.95,-435.2 305.95,-435.2"/>
+<text xml:space="preserve" text-anchor="middle" x="267.33" y="-413.9" font-family="Times,serif" font-size="11.00">Query Embeddings</text>
+</g>
+<!-- Q2&#45;&gt;Q3 -->
+<g id="edge12" class="edge">
+<title>Q2-&gt;Q3</title>
+<path fill="none" stroke="black" d="M282.3,-482.81C279.86,-472.26 276.68,-458.56 273.88,-446.48"/>
+<polygon fill="black" stroke="black" points="277.36,-445.99 271.7,-437.04 270.54,-447.57 277.36,-445.99"/>
+</g>
+<!-- Q3&#45;&gt;R3 -->
+<g id="edge13" class="edge">
+<title>Q3-&gt;R3</title>
+<path fill="none" stroke="black" d="M247.77,-398.85C235.05,-387.57 218.11,-372.55 203.14,-359.27"/>
+<polygon fill="black" stroke="black" points="205.54,-356.72 195.73,-352.7 200.89,-361.95 205.54,-356.72"/>
+</g>
+<!-- R4 -->
+<g id="node16" class="node">
+<title>R4</title>
+<path fill="white" stroke="black" d="M218.86,-266.6C218.86,-266.6 117.8,-266.6 117.8,-266.6 111.8,-266.6 105.8,-260.6 105.8,-254.6 105.8,-254.6 105.8,-242.6 105.8,-242.6 105.8,-236.6 111.8,-230.6 117.8,-230.6 117.8,-230.6 218.86,-230.6 218.86,-230.6 224.86,-230.6 230.86,-236.6 230.86,-242.6 230.86,-242.6 230.86,-254.6 230.86,-254.6 230.86,-260.6 224.86,-266.6 218.86,-266.6"/>
+<text xml:space="preserve" text-anchor="middle" x="168.33" y="-251.9" font-family="Times,serif" font-size="11.00">Second-pass Refinement</text>
+<text xml:space="preserve" text-anchor="middle" x="168.33" y="-238.7" font-family="Times,serif" font-size="11.00">rerank and dedup</text>
+</g>
+<!-- R3&#45;&gt;R4 -->
+<g id="edge14" class="edge">
+<title>R3-&gt;R4</title>
+<path fill="none" stroke="black" d="M168.33,-303.36C168.33,-295.52 168.33,-286.66 168.33,-278.43"/>
+<polygon fill="black" stroke="black" points="171.83,-278.52 168.33,-268.52 164.83,-278.52 171.83,-278.52"/>
+</g>
+<!-- C1 -->
+<g id="node17" class="node">
+<title>C1</title>
+<path fill="white" stroke="black" d="M208.67,-193.6C208.67,-193.6 128,-193.6 128,-193.6 122,-193.6 116,-187.6 116,-181.6 116,-181.6 116,-169.6 116,-169.6 116,-163.6 122,-157.6 128,-157.6 128,-157.6 208.67,-157.6 208.67,-157.6 214.67,-157.6 220.67,-163.6 220.67,-169.6 220.67,-169.6 220.67,-181.6 220.67,-181.6 220.67,-187.6 214.67,-193.6 208.67,-193.6"/>
+<text xml:space="preserve" text-anchor="middle" x="168.33" y="-178.9" font-family="Times,serif" font-size="11.00">Context Assembly</text>
+<text xml:space="preserve" text-anchor="middle" x="168.33" y="-165.7" font-family="Times,serif" font-size="11.00">metadata + citations</text>
+</g>
+<!-- R4&#45;&gt;C1 -->
+<g id="edge15" class="edge">
+<title>R4-&gt;C1</title>
+<path fill="none" stroke="black" d="M168.33,-230.41C168.33,-222.83 168.33,-213.7 168.33,-205.14"/>
+<polygon fill="black" stroke="black" points="171.83,-205.14 168.33,-195.14 164.83,-205.14 171.83,-205.14"/>
+</g>
+<!-- L1 -->
+<g id="node18" class="node">
+<title>L1</title>
+<path fill="white" stroke="black" d="M238.26,-120.6C238.26,-120.6 98.41,-120.6 98.41,-120.6 92.41,-120.6 86.41,-114.6 86.41,-108.6 86.41,-108.6 86.41,-96.6 86.41,-96.6 86.41,-90.6 92.41,-84.6 98.41,-84.6 98.41,-84.6 238.26,-84.6 238.26,-84.6 244.26,-84.6 250.26,-90.6 250.26,-96.6 250.26,-96.6 250.26,-108.6 250.26,-108.6 250.26,-114.6 244.26,-120.6 238.26,-120.6"/>
+<text xml:space="preserve" text-anchor="middle" x="168.33" y="-105.9" font-family="Times,serif" font-size="11.00">LLM Answer Generation</text>
+<text xml:space="preserve" text-anchor="middle" x="168.33" y="-92.7" font-family="Times,serif" font-size="11.00">(Azure OpenAI ChatCompletion)</text>
+</g>
+<!-- C1&#45;&gt;L1 -->
+<g id="edge16" class="edge">
+<title>C1-&gt;L1</title>
+<path fill="none" stroke="black" d="M168.33,-157.41C168.33,-149.83 168.33,-140.7 168.33,-132.14"/>
+<polygon fill="black" stroke="black" points="171.83,-132.14 168.33,-122.14 164.83,-132.14 171.83,-132.14"/>
+</g>
+<!-- Out -->
+<g id="node19" class="node">
+<title>Out</title>
+<path fill="white" stroke="black" d="M228.63,-47.6C228.63,-47.6 108.04,-47.6 108.04,-47.6 102.04,-47.6 96.04,-41.6 96.04,-35.6 96.04,-35.6 96.04,-12 96.04,-12 96.04,-6 102.04,0 108.04,0 108.04,0 228.63,0 228.63,0 234.63,0 240.63,-6 240.63,-12 240.63,-12 240.63,-35.6 240.63,-35.6 240.63,-41.6 234.63,-47.6 228.63,-47.6"/>
+<text xml:space="preserve" text-anchor="middle" x="168.33" y="-33.7" font-family="Times,serif" font-size="11.00">Answer + Citations</text>
+<text xml:space="preserve" text-anchor="middle" x="168.33" y="-20.5" font-family="Times,serif" font-size="11.00">race, driver, file, timestamps,</text>
+<text xml:space="preserve" text-anchor="middle" x="168.33" y="-7.3" font-family="Times,serif" font-size="11.00">speaker, snippet</text>
+</g>
+<!-- L1&#45;&gt;Out -->
+<g id="edge17" class="edge">
+<title>L1-&gt;Out</title>
+<path fill="none" stroke="black" d="M168.33,-84.17C168.33,-76.81 168.33,-67.96 168.33,-59.37"/>
+<polygon fill="black" stroke="black" points="171.83,-59.5 168.33,-49.5 164.83,-59.5 171.83,-59.5"/>
+</g>
+</g>
+</svg>

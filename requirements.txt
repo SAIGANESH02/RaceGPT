@@ -1,0 +1,5 @@
+chainlit
+PyMuPDF
+sentence-transformers
+openai
+scikit-learn
