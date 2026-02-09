@@ -128,8 +128,7 @@ Create a `.env` with your Azure OpenAI credentials before running.
 ---
 
 ## System Components Diagram
-
-<img src="assets/SystemComponents.svg" alt="System Components Diagram" width="100%">
+![alt text](assets/SystemComponents.svg)
 
 ---
 
